@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Agriculture — Admaccan</title>
+<meta name="description" content="Admaccan's agricultural operations — organic farming, regenerative practices, and sustainable crop production from soil to shelf.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  :root {
+    --white: #FAFCFD; --off-white: #F1F5F4; --grey-100: #E8EDEC; --grey-200: #D0D8D6;
+    --grey-400: #8A9A96; --grey-600: #566B65; --grey-800: #2B3B37; --grey-900: #1A2622;
+    --blue: #2E5C8A; --blue-light: #4A8DC4; --green-accent: #3D8B5E; --green-muted: #5EA87B;
+    --font-display: 'Playfair Display', Georgia, serif;
+    --font-body: 'DM Sans', -apple-system, sans-serif;
+  }
+  html { scroll-behavior: smooth; }
+  body { font-family: var(--font-body); color: var(--grey-900); background: var(--white); line-height: 1.6; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+
+  /* ── TOP BAR ── */
+  .top-bar { background: var(--grey-900); padding: 0.45rem 3rem; display: flex; justify-content: flex-end; align-items: center; gap: 1.75rem; position: relative; z-index: 101; }
+  .top-bar a { font-size: 0.72rem; font-weight: 500; color: var(--grey-400); text-decoration: none; letter-spacing: 0.04em; transition: color .2s ease; }
+  .top-bar a:hover { color: var(--white); }
+  .top-bar-divider { width: 1px; height: 12px; background: rgba(255,255,255,0.12); }
+
+  /* ── NAV ── */
+  .nav { position: sticky; top: 0; z-index: 100; background: rgba(255,255,255,0.97); backdrop-filter: blur(16px); border-bottom: 1px solid var(--grey-100); transition: box-shadow .3s ease; }
+  .nav.scrolled { box-shadow: 0 2px 20px rgba(0,0,0,0.06); }
+  .nav-inner { max-width: 1320px; margin: 0 auto; padding: 0 3rem; display: flex; align-items: center; height: 68px; gap: 2.5rem; }
+  .nav-logo { font-family: var(--font-display); font-size: 1.5rem; font-weight: 600; color: var(--grey-900); letter-spacing: -0.02em; text-decoration: none; flex-shrink: 0; }
+  .nav-logo span { color: var(--green-accent); }
+  .nav-links { display: flex; align-items: center; gap: 0; list-style: none; height: 68px; flex: 1; }
+  .nav-links li { height: 100%; display: flex; align-items: center; }
+  .nav-links a { display: flex; align-items: center; gap: 0.4rem; height: 100%; padding: 0 0.9rem; font-size: 0.88rem; font-weight: 700; color: var(--grey-600); text-decoration: none; letter-spacing: 0.01em; position: relative; transition: color .2s ease; white-space: nowrap; }
+  .nav-links a::after { content: ''; position: absolute; bottom: 0; left: 0.9rem; right: 0.9rem; height: 2.5px; background: var(--green-accent); border-radius: 2px 2px 0 0; transform: scaleX(0); transition: transform .25s ease; }
+  .nav-links a:hover { color: var(--grey-900); }
+  .nav-links a:hover::after { transform: scaleX(1); }
+  .nav-links a.active { color: var(--green-accent); }
+  .nav-links a.active::after { transform: scaleX(1); }
+  .nav-home-icon { width: 17px; height: 17px; stroke: currentColor; stroke-width: 1.75; fill: none; }
+  .nav-cta { display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.55rem 1.25rem; background: var(--green-accent); color: var(--white); font-size: 0.8rem; font-weight: 600; text-decoration: none; border-radius: 5px; letter-spacing: 0.02em; transition: all .25s ease; flex-shrink: 0; margin-left: auto; }
+  .nav-cta:hover { background: var(--grey-900); transform: translateY(-1px); }
+
+  /* Mobile nav */
+  .mobile-menu-btn { display: none; background: none; border: none; cursor: pointer; padding: 0.5rem; flex-direction: column; gap: 5px; }
+  .mobile-menu-btn span { display: block; width: 22px; height: 2px; background: var(--grey-900); border-radius: 2px; transition: all .3s ease; }
+  .mobile-nav { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(255,255,255,0.98); backdrop-filter: blur(20px); z-index: 200; flex-direction: column; align-items: center; justify-content: center; gap: 0.5rem; }
+  .mobile-nav.open { display: flex; }
+  .mobile-nav a { font-family: var(--font-display); font-size: 1.5rem; font-weight: 500; color: var(--grey-900); text-decoration: none; padding: 0.75rem 2rem; transition: color .2s ease; }
+  .mobile-nav a:hover { color: var(--green-accent); }
+  .mobile-nav-close { position: absolute; top: 1.25rem; right: 1.5rem; background: none; border: none; font-size: 1.75rem; cursor: pointer; color: var(--grey-600); padding: 0.5rem; }
+
+  /* ── PAGE HERO ── */
+  .page-hero { position: relative; height: 420px; overflow: hidden; display: flex; align-items: flex-end; }
+  .page-hero img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .page-hero-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(26,38,34,0.75) 0%, rgba(26,38,34,0.2) 50%, transparent 100%); }
+  .page-hero-content { position: relative; z-index: 2; max-width: 1280px; margin: 0 auto; padding: 3rem; width: 100%; }
+  .page-hero-breadcrumb { font-size: 0.8rem; color: rgba(255,255,255,0.7); margin-bottom: 0.75rem; }
+  .page-hero-breadcrumb a { color: rgba(255,255,255,0.7); text-decoration: none; transition: color .2s; }
+  .page-hero-breadcrumb a:hover { color: var(--white); }
+  .page-hero h1 { font-family: var(--font-display); font-size: clamp(2.5rem, 5vw, 3.5rem); font-weight: 600; color: var(--white); letter-spacing: -0.02em; line-height: 1.15; }
+
+  /* ── INTRO SECTION ── */
+  .intro { padding: 5rem 3rem; background: var(--white); }
+  .intro-inner { max-width: 1280px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+  .intro-text h2 { font-family: var(--font-display); font-size: clamp(1.75rem, 3vw, 2.25rem); font-weight: 600; color: var(--grey-900); line-height: 1.25; letter-spacing: -0.02em; margin-bottom: 1.25rem; }
+  .intro-text h2 em { font-style: italic; color: var(--green-accent); }
+  .intro-text p { font-size: 1rem; color: var(--grey-600); line-height: 1.8; margin-bottom: 1rem; }
+  .intro-img { border-radius: 12px; overflow: hidden; box-shadow: 0 8px 40px rgba(0,0,0,0.1); }
+  .intro-img img { display: block; width: 100%; height: 360px; object-fit: cover; }
+
+  /* ── PILLARS ── */
+  .pillars { padding: 5rem 3rem; background: var(--off-white); }
+  .pillars-inner { max-width: 1280px; margin: 0 auto; }
+  .pillars-header { text-align: center; max-width: 640px; margin: 0 auto 3.5rem; }
+  .section-label { display: inline-block; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--green-accent); margin-bottom: 1rem; position: relative; padding-left: 1.5rem; }
+  .section-label::before { content: ''; position: absolute; left: 0; top: 50%; transform: translateY(-50%); width: 12px; height: 1.5px; background: var(--green-accent); }
+  .pillars-header h2 { font-family: var(--font-display); font-size: clamp(1.75rem, 3vw, 2.25rem); font-weight: 600; color: var(--grey-900); line-height: 1.25; letter-spacing: -0.02em; }
+  .pillars-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+  .pillar-card { background: var(--white); border-radius: 12px; padding: 2.25rem; border: 1px solid var(--grey-100); transition: all .4s ease; }
+  .pillar-card:hover { box-shadow: 0 8px 32px rgba(0,0,0,0.06); transform: translateY(-3px); }
+  .pillar-num { font-family: var(--font-display); font-size: 2.5rem; font-weight: 600; color: var(--green-accent); opacity: 0.25; line-height: 1; margin-bottom: 1rem; }
+  .pillar-card h3 { font-family: var(--font-display); font-size: 1.2rem; font-weight: 600; color: var(--grey-900); margin-bottom: 0.75rem; }
+  .pillar-card p { font-size: 0.9rem; color: var(--grey-600); line-height: 1.75; }
+
+  /* ── PHOTO FEATURE ── */
+  .photo-feature { padding: 5rem 3rem; background: var(--white); }
+  .photo-feature-inner { max-width: 1280px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+  .photo-feature-inner.reverse { direction: rtl; }
+  .photo-feature-inner.reverse > * { direction: ltr; }
+  .photo-feature-img { border-radius: 12px; overflow: hidden; box-shadow: 0 8px 40px rgba(0,0,0,0.1); }
+  .photo-feature-img img { display: block; width: 100%; height: 360px; object-fit: cover; }
+  .photo-feature-text h2 { font-family: var(--font-display); font-size: clamp(1.5rem, 2.5vw, 2rem); font-weight: 600; color: var(--grey-900); line-height: 1.25; letter-spacing: -0.01em; margin-bottom: 1.25rem; }
+  .photo-feature-text p { font-size: 1rem; color: var(--grey-600); line-height: 1.8; margin-bottom: 1rem; }
+
+  /* ── CTA STRIP ── */
+  .cta-strip { padding: 5rem 3rem; background: var(--grey-900); position: relative; overflow: hidden; }
+  .cta-strip::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 30% 50%, rgba(61,139,94,0.12), transparent 70%); }
+  .cta-inner { max-width: 800px; margin: 0 auto; text-align: center; position: relative; z-index: 1; }
+  .cta-strip h2 { font-family: var(--font-display); font-size: clamp(1.75rem, 3vw, 2.25rem); font-weight: 500; color: var(--white); line-height: 1.4; margin-bottom: 1.5rem; }
+  .cta-strip h2 em { font-style: italic; color: var(--green-muted); }
+  .cta-strip p { font-size: 1rem; color: var(--grey-400); line-height: 1.75; max-width: 580px; margin: 0 auto 2rem; }
+  .cta-btn { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.9rem 2rem; background: var(--green-accent); color: var(--white); font-size: 0.9rem; font-weight: 600; text-decoration: none; border-radius: 6px; transition: all .3s ease; }
+  .cta-btn:hover { background: var(--white); color: var(--grey-900); transform: translateY(-1px); }
+
+  /* ── FOOTER ── */
+  .footer { padding: 2.5rem 3rem 2rem; background: var(--grey-900); border-top: 1px solid rgba(255,255,255,0.06); }
+  .footer-inner { max-width: 1280px; margin: 0 auto; }
+  .footer-top { display: flex; align-items: center; justify-content: space-between; padding-bottom: 1.75rem; border-bottom: 1px solid rgba(255,255,255,0.08); }
+  .footer-logo { font-family: var(--font-display); font-size: 1.15rem; font-weight: 600; color: var(--white); text-decoration: none; }
+  .footer-logo span { color: var(--green-muted); }
+  .footer-links { display: flex; align-items: center; gap: 2rem; list-style: none; }
+  .footer-links a { font-size: 0.8rem; font-weight: 500; color: var(--grey-400); text-decoration: none; transition: color .2s ease; white-space: nowrap; }
+  .footer-links a:hover { color: var(--white); }
+  .footer-bottom { padding-top: 1.25rem; text-align: center; }
+  .footer-copy { font-size: 0.75rem; color: rgba(138,154,150,0.6); }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+  .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease, transform 0.7s ease; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+
+  /* ── MOBILE ── */
+  @media (max-width: 1060px) {
+    .nav-inner { padding: 0 1.5rem; gap: 1.5rem; }
+    .nav-links a { padding: 0 0.55rem; font-size: 0.78rem; }
+    .nav-cta { padding: 0.45rem 0.9rem; font-size: 0.75rem; }
+    .intro-inner, .photo-feature-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+    .photo-feature-inner.reverse { direction: ltr; }
+    .pillars-grid { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 640px) {
+    .top-bar { padding: 0.4rem 1.5rem; }
+    .nav-inner { padding: 0 1.5rem; }
+    .nav-links { display: none; }
+    .nav-cta { display: none; }
+    .mobile-menu-btn { display: flex; }
+    .intro { padding: 3rem 1.5rem; }
+    .pillars { padding: 3rem 1.5rem; }
+    .photo-feature { padding: 3rem 1.5rem; }
+    .cta-strip { padding: 3rem 1.5rem; }
+    .page-hero { height: 280px; }
+    .page-hero-content { padding: 2rem 1.5rem; }
+    .footer { padding: 2rem 1.5rem; }
+    .footer-top { flex-direction: column; gap: 1.25rem; text-align: center; }
+    .footer-links { flex-wrap: wrap; justify-content: center; gap: 1rem 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="top-bar">
+  <a href="#">Contact Us</a>
+  <span class="top-bar-divider"></span>
+  <a href="#">Careers</a>
+  <span class="top-bar-divider"></span>
+  <a href="#">EN</a>
+</div>
+
+<!-- NAV -->
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">Admac<span>can</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html" title="Home"><svg class="nav-home-icon" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9.5L12 3l9 6.5V20a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9.5z"/><polyline points="9 21 9 14 15 14 15 21"/></svg></a></li>
+      <li><a href="agriculture.html" class="active">Agriculture</a></li>
+      <li><a href="#">Laboratory</a></li>
+      <li><a href="#">Cleaning Solutions</a></li>
+      <li><a href="#">R&D</a></li>
+      <li><a href="#">News</a></li>
+      <li><a href="#">Careers</a></li>
+      <li><a href="#">Mission</a></li>
+    </ul>
+    <a href="#" class="nav-cta">Contact</a>
+    <button class="mobile-menu-btn" aria-label="Menu" onclick="document.getElementById('mobileNav').classList.add('open')">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile nav -->
+<div class="mobile-nav" id="mobileNav">
+  <button class="mobile-nav-close" onclick="document.getElementById('mobileNav').classList.remove('open')" aria-label="Close">&times;</button>
+  <a href="index.html" onclick="document.getElementById('mobileNav').classList.remove('open')">Home</a>
+  <a href="agriculture.html" onclick="document.getElementById('mobileNav').classList.remove('open')">Agriculture</a>
+  <a href="#" onclick="document.getElementById('mobileNav').classList.remove('open')">Laboratory</a>
+  <a href="#" onclick="document.getElementById('mobileNav').classList.remove('open')">Cleaning Solutions</a>
+  <a href="#" onclick="document.getElementById('mobileNav').classList.remove('open')">R&D</a>
+  <a href="#" onclick="document.getElementById('mobileNav').classList.remove('open')">News</a>
+  <a href="#" onclick="document.getElementById('mobileNav').classList.remove('open')">Careers</a>
+  <a href="#" onclick="document.getElementById('mobileNav').classList.remove('open')">Mission</a>
+</div>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <img src="agri-hero.jpg" alt="Aerial view of organic farm rows being watered">
+  <div class="page-hero-overlay"></div>
+  <div class="page-hero-content">
+    <div class="page-hero-breadcrumb"><a href="index.html">Home</a> / Agriculture</div>
+    <h1>Agriculture</h1>
+  </div>
+</section>
+
+<!-- INTRO -->
+<section class="intro">
+  <div class="intro-inner reveal">
+    <div class="intro-text">
+      <h2>Rooted in the soil. Driven by <em>science.</em></h2>
+      <p>At Admaccan, agriculture is more than farming — it's a commitment to building a sustainable food system from the ground up. Our operations span open-field cultivation, greenhouse production, and controlled-environment growing.</p>
+      <p>Every crop is grown using certified organic practices with zero synthetic pesticides or chemical fertilizers. We invest in soil health, water conservation, and biodiversity so the land produces for generations to come.</p>
+    </div>
+    <div class="intro-img">
+      <img src="agri-greenhouse.jpg" alt="Greenhouse farming operations with workers planting seedlings">
+    </div>
+  </div>
+</section>
+
+<!-- PILLARS -->
+<section class="pillars">
+  <div class="pillars-inner">
+    <div class="pillars-header reveal">
+      <span class="section-label">Our Approach</span>
+      <h2>Three pillars of sustainable agriculture</h2>
+    </div>
+    <div class="pillars-grid">
+      <div class="pillar-card reveal">
+        <div class="pillar-num">01</div>
+        <h3>Regenerative Soil Practices</h3>
+        <p>We prioritize soil health through cover cropping, crop rotation, and composting. Healthy soil means healthier crops, stronger yields, and a reduced carbon footprint across all our farmland.</p>
+      </div>
+      <div class="pillar-card reveal">
+        <div class="pillar-num">02</div>
+        <h3>Water-Smart Irrigation</h3>
+        <p>Our farms use precision drip irrigation and rainwater harvesting systems to minimize water use. Every drop is optimized to support crop growth while preserving local water resources.</p>
+      </div>
+      <div class="pillar-card reveal">
+        <div class="pillar-num">03</div>
+        <h3>Integrated Pest Management</h3>
+        <p>Instead of chemical pesticides, we rely on beneficial insects, companion planting, and biological controls to manage pests — keeping our crops clean and our ecosystems intact.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PHOTO FEATURE -->
+<section class="photo-feature">
+  <div class="photo-feature-inner reverse reveal">
+    <div class="photo-feature-img">
+      <img src="agri-tractor.jpg" alt="John Deere tractor harvesting grain on farm">
+    </div>
+    <div class="photo-feature-text">
+      <h2>From Harvest to Market</h2>
+      <p>Our vertically integrated model means we control every step — from planting and cultivation to harvest, processing, and distribution. This ensures full traceability and uncompromising quality at every stage.</p>
+      <p>With modern equipment and a dedicated team, we operate efficiently at scale while maintaining the hands-on care that organic farming demands.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-strip">
+  <div class="cta-inner reveal">
+    <h2>Interested in <em>partnering</em> with us?</h2>
+    <p>Whether you're a distributor, retailer, or fellow grower, we'd love to explore how we can work together to bring organic products to more people.</p>
+    <a href="#" class="cta-btn">Get in Touch &rarr;</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <a href="index.html" class="footer-logo">Admac<span>can</span></a>
+      <ul class="footer-links">
+        <li><a href="#">Careers</a></li>
+        <li><a href="#">Investors</a></li>
+        <li><a href="#">Media Center</a></li>
+        <li><a href="#">Supplier Center</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Terms of Use</a></li>
+      </ul>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copy">&copy; 2026 Admaccan. All rights reserved.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 40); });
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) { setTimeout(() => entry.target.classList.add('visible'), i * 120); observer.unobserve(entry.target); }
+    });
+  }, { threshold: 0.15 });
+  reveals.forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
