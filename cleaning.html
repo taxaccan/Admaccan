@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Agriculture — Admaccan</title>
-<meta name="description" content="Admaccan's agricultural operations — organic farming, regenerative practices, and sustainable crop production from soil to shelf.">
+<title>Cleaning Solutions — Admaccan</title>
+<meta name="description" content="Admaccan's organic cleaning solutions for residential and commercial use — safe, effective, and developed in our own laboratories.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -43,13 +43,11 @@
   .nav-home-icon { width: 17px; height: 17px; stroke: currentColor; stroke-width: 1.75; fill: none; }
   .nav-cta { display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.55rem 1.25rem; background: var(--green-accent); color: var(--white); font-size: 0.8rem; font-weight: 600; text-decoration: none; border-radius: 5px; letter-spacing: 0.02em; transition: all .25s ease; flex-shrink: 0; margin-left: auto; }
   .nav-cta:hover { background: var(--grey-900); transform: translateY(-1px); }
-
-  /* Mobile nav */
   .mobile-menu-btn { display: none; background: none; border: none; cursor: pointer; padding: 0.5rem; flex-direction: column; gap: 5px; }
-  .mobile-menu-btn span { display: block; width: 22px; height: 2px; background: var(--grey-900); border-radius: 2px; transition: all .3s ease; }
+  .mobile-menu-btn span { display: block; width: 22px; height: 2px; background: var(--grey-900); border-radius: 2px; }
   .mobile-nav { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(255,255,255,0.98); backdrop-filter: blur(20px); z-index: 200; flex-direction: column; align-items: center; justify-content: center; gap: 0.5rem; }
   .mobile-nav.open { display: flex; }
-  .mobile-nav a { font-family: var(--font-display); font-size: 1.5rem; font-weight: 500; color: var(--grey-900); text-decoration: none; padding: 0.75rem 2rem; transition: color .2s ease; }
+  .mobile-nav a { font-family: var(--font-display); font-size: 1.5rem; font-weight: 500; color: var(--grey-900); text-decoration: none; padding: 0.75rem 2rem; }
   .mobile-nav a:hover { color: var(--green-accent); }
   .mobile-nav-close { position: absolute; top: 1.25rem; right: 1.5rem; background: none; border: none; font-size: 1.75rem; cursor: pointer; color: var(--grey-600); padding: 0.5rem; }
 
@@ -63,7 +61,7 @@
   .page-hero-breadcrumb a:hover { color: var(--white); }
   .page-hero h1 { font-family: var(--font-display); font-size: clamp(2.5rem, 5vw, 3.5rem); font-weight: 600; color: var(--white); letter-spacing: -0.02em; line-height: 1.15; }
 
-  /* ── INTRO SECTION ── */
+  /* ── INTRO ── */
   .intro { padding: 5rem 3rem; background: var(--white); }
   .intro-inner { max-width: 1280px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
   .intro-text h2 { font-family: var(--font-display); font-size: clamp(1.75rem, 3vw, 2.25rem); font-weight: 600; color: var(--grey-900); line-height: 1.25; letter-spacing: -0.02em; margin-bottom: 1.25rem; }
@@ -79,12 +77,12 @@
   .section-label { display: inline-block; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--green-accent); margin-bottom: 1rem; position: relative; padding-left: 1.5rem; }
   .section-label::before { content: ''; position: absolute; left: 0; top: 50%; transform: translateY(-50%); width: 12px; height: 1.5px; background: var(--green-accent); }
   .pillars-header h2 { font-family: var(--font-display); font-size: clamp(1.75rem, 3vw, 2.25rem); font-weight: 600; color: var(--grey-900); line-height: 1.25; letter-spacing: -0.02em; }
-  .pillars-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
-  .pillar-card { background: var(--white); border-radius: 12px; padding: 2.25rem; border: 1px solid var(--grey-100); transition: all .4s ease; }
+  .pillars-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
+  .pillar-card { background: var(--white); border-radius: 12px; padding: 2rem; border: 1px solid var(--grey-100); transition: all .4s ease; }
   .pillar-card:hover { box-shadow: 0 8px 32px rgba(0,0,0,0.06); transform: translateY(-3px); }
-  .pillar-num { font-family: var(--font-display); font-size: 2.5rem; font-weight: 600; color: var(--green-accent); opacity: 0.25; line-height: 1; margin-bottom: 1rem; }
-  .pillar-card h3 { font-family: var(--font-display); font-size: 1.2rem; font-weight: 600; color: var(--grey-900); margin-bottom: 0.75rem; }
-  .pillar-card p { font-size: 0.9rem; color: var(--grey-600); line-height: 1.75; }
+  .pillar-icon { width: 44px; height: 44px; border-radius: 10px; background: rgba(61, 139, 94, 0.1); display: flex; align-items: center; justify-content: center; margin-bottom: 1.25rem; }
+  .pillar-card h3 { font-family: var(--font-display); font-size: 1.1rem; font-weight: 600; color: var(--grey-900); margin-bottom: 0.6rem; }
+  .pillar-card p { font-size: 0.88rem; color: var(--grey-600); line-height: 1.7; }
 
   /* ── PHOTO FEATURE ── */
   .photo-feature { padding: 5rem 3rem; background: var(--white); }
@@ -95,6 +93,21 @@
   .photo-feature-img img { display: block; width: 100%; height: 360px; object-fit: cover; }
   .photo-feature-text h2 { font-family: var(--font-display); font-size: clamp(1.5rem, 2.5vw, 2rem); font-weight: 600; color: var(--grey-900); line-height: 1.25; letter-spacing: -0.01em; margin-bottom: 1.25rem; }
   .photo-feature-text p { font-size: 1rem; color: var(--grey-600); line-height: 1.8; margin-bottom: 1rem; }
+  .check-list { list-style: none; margin-top: 0.5rem; }
+  .check-list li { font-size: 0.95rem; color: var(--grey-600); line-height: 1.8; padding-left: 1.5rem; position: relative; }
+  .check-list li::before { content: '✓'; position: absolute; left: 0; color: var(--green-accent); font-weight: 700; }
+
+  /* ── ENVIRONMENTS ── */
+  .environments { padding: 5rem 3rem; background: var(--off-white); }
+  .environments-inner { max-width: 1280px; margin: 0 auto; text-align: center; }
+  .environments-inner h2 { font-family: var(--font-display); font-size: clamp(1.75rem, 3vw, 2.25rem); font-weight: 600; color: var(--grey-900); line-height: 1.25; margin-bottom: 1rem; }
+  .environments-inner > p { font-size: 1rem; color: var(--grey-600); line-height: 1.75; max-width: 600px; margin: 0 auto 3rem; }
+  .env-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
+  .env-card { background: var(--white); border-radius: 12px; padding: 2rem 1.5rem; border: 1px solid var(--grey-100); text-align: center; transition: all .3s ease; }
+  .env-card:hover { box-shadow: 0 6px 24px rgba(0,0,0,0.06); transform: translateY(-3px); }
+  .env-card-icon { font-size: 2rem; margin-bottom: 1rem; }
+  .env-card h3 { font-family: var(--font-display); font-size: 1.05rem; font-weight: 600; color: var(--grey-900); margin-bottom: 0.4rem; }
+  .env-card p { font-size: 0.85rem; color: var(--grey-400); }
 
   /* ── CTA STRIP ── */
   .cta-strip { padding: 5rem 3rem; background: var(--grey-900); position: relative; overflow: hidden; }
@@ -130,7 +143,8 @@
     .nav-cta { padding: 0.45rem 0.9rem; font-size: 0.75rem; }
     .intro-inner, .photo-feature-inner { grid-template-columns: 1fr; gap: 2.5rem; }
     .photo-feature-inner.reverse { direction: ltr; }
-    .pillars-grid { grid-template-columns: 1fr; }
+    .pillars-grid { grid-template-columns: repeat(2, 1fr); }
+    .env-grid { grid-template-columns: repeat(2, 1fr); }
   }
   @media (max-width: 640px) {
     .top-bar { padding: 0.4rem 1.5rem; }
@@ -140,7 +154,10 @@
     .mobile-menu-btn { display: flex; }
     .intro { padding: 3rem 1.5rem; }
     .pillars { padding: 3rem 1.5rem; }
+    .pillars-grid { grid-template-columns: 1fr; }
     .photo-feature { padding: 3rem 1.5rem; }
+    .environments { padding: 3rem 1.5rem; }
+    .env-grid { grid-template-columns: 1fr 1fr; }
     .cta-strip { padding: 3rem 1.5rem; }
     .page-hero { height: 280px; }
     .page-hero-content { padding: 2rem 1.5rem; }
@@ -154,10 +171,8 @@
 
 <!-- TOP BAR -->
 <div class="top-bar">
-  <a href="#">Contact Us</a>
-  <span class="top-bar-divider"></span>
-  <a href="#">Careers</a>
-  <span class="top-bar-divider"></span>
+  <a href="#">Contact Us</a><span class="top-bar-divider"></span>
+  <a href="#">Careers</a><span class="top-bar-divider"></span>
   <a href="#">EN</a>
 </div>
 
@@ -167,41 +182,31 @@
     <a href="index.html" class="nav-logo">Admac<span>can</span></a>
     <ul class="nav-links">
       <li><a href="index.html" title="Home"><svg class="nav-home-icon" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9.5L12 3l9 6.5V20a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9.5z"/><polyline points="9 21 9 14 15 14 15 21"/></svg></a></li>
-      <li><a href="agriculture.html" class="active">Agriculture</a></li>
+      <li><a href="agriculture.html">Agriculture</a></li>
       <li><a href="#">Laboratory</a></li>
-      <li><a href="cleaning.html">Cleaning Solutions</a></li>
+      <li><a href="cleaning.html" class="active">Cleaning Solutions</a></li>
       <li><a href="#">R&D</a></li>
       <li><a href="#">News</a></li>
       <li><a href="#">Careers</a></li>
       <li><a href="#">Mission</a></li>
     </ul>
     <a href="#" class="nav-cta">Contact</a>
-    <button class="mobile-menu-btn" aria-label="Menu" onclick="document.getElementById('mobileNav').classList.add('open')">
-      <span></span><span></span><span></span>
-    </button>
+    <button class="mobile-menu-btn" aria-label="Menu" onclick="document.getElementById('mobileNav').classList.add('open')"><span></span><span></span><span></span></button>
   </div>
 </nav>
-
-<!-- Mobile nav -->
 <div class="mobile-nav" id="mobileNav">
   <button class="mobile-nav-close" onclick="document.getElementById('mobileNav').classList.remove('open')" aria-label="Close">&times;</button>
-  <a href="index.html" onclick="document.getElementById('mobileNav').classList.remove('open')">Home</a>
-  <a href="agriculture.html" onclick="document.getElementById('mobileNav').classList.remove('open')">Agriculture</a>
-  <a href="#" onclick="document.getElementById('mobileNav').classList.remove('open')">Laboratory</a>
-  <a href="#" onclick="document.getElementById('mobileNav').classList.remove('open')">Cleaning Solutions</a>
-  <a href="#" onclick="document.getElementById('mobileNav').classList.remove('open')">R&D</a>
-  <a href="#" onclick="document.getElementById('mobileNav').classList.remove('open')">News</a>
-  <a href="#" onclick="document.getElementById('mobileNav').classList.remove('open')">Careers</a>
-  <a href="#" onclick="document.getElementById('mobileNav').classList.remove('open')">Mission</a>
+  <a href="index.html">Home</a><a href="agriculture.html">Agriculture</a><a href="#">Laboratory</a>
+  <a href="cleaning.html">Cleaning Solutions</a><a href="#">R&D</a><a href="#">News</a><a href="#">Careers</a><a href="#">Mission</a>
 </div>
 
 <!-- PAGE HERO -->
 <section class="page-hero">
-  <img src="agri-hero.jpg" alt="Aerial view of organic farm rows being watered">
+  <img src="clean-hero.jpg" alt="Professional cleaning team at work">
   <div class="page-hero-overlay"></div>
   <div class="page-hero-content">
-    <div class="page-hero-breadcrumb"><a href="index.html">Home</a> / Agriculture</div>
-    <h1>Agriculture</h1>
+    <div class="page-hero-breadcrumb"><a href="index.html">Home</a> / Cleaning Solutions</div>
+    <h1>Cleaning Solutions</h1>
   </div>
 </section>
 
@@ -209,53 +214,93 @@
 <section class="intro">
   <div class="intro-inner reveal">
     <div class="intro-text">
-      <h2>Rooted in the soil. Driven by <em>science.</em></h2>
-      <p>At Admaccan, agriculture is more than farming — it's a commitment to building a sustainable food system from the ground up. Our operations span open-field cultivation, greenhouse production, and controlled-environment growing.</p>
-      <p>Every crop is grown using certified organic practices with zero synthetic pesticides or chemical fertilizers. We invest in soil health, water conservation, and biodiversity so the land produces for generations to come.</p>
+      <h2>Powerful cleaning. <em>Organic</em> ingredients.</h2>
+      <p>We provide high-quality cleaning solutions for both residential and commercial use, designed to deliver powerful results while maintaining the highest standards of safety and sustainability.</p>
+      <p>Every product is carefully developed to ensure effective cleaning without compromising the health of your home, workplace, or environment.</p>
     </div>
     <div class="intro-img">
-      <img src="agri-greenhouse.jpg" alt="Greenhouse farming operations with workers planting seedlings">
+      <img src="clean-product.jpg" alt="Cleaning product being applied with rubber gloves">
     </div>
   </div>
 </section>
 
-<!-- PILLARS -->
+<!-- DEVELOPED IN OUR LABS -->
+<section class="photo-feature">
+  <div class="photo-feature-inner reverse reveal">
+    <div class="photo-feature-img">
+      <img src="clean-lab.jpg" alt="Cleaning product formulation in laboratory">
+    </div>
+    <div class="photo-feature-text">
+      <h2>Developed in Our Own Laboratories</h2>
+      <p>All of our products are formulated and tested in our in-house laboratories, where we maintain strict quality control at every stage of production. This allows us to:</p>
+      <ul class="check-list">
+        <li>Ensure consistent performance and reliability</li>
+        <li>Meet the highest safety and environmental standards</li>
+        <li>Continuously innovate and improve our formulations</li>
+        <li>Deliver products you can trust in any setting</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ORGANIC SAFE EFFECTIVE -->
 <section class="pillars">
   <div class="pillars-inner">
     <div class="pillars-header reveal">
       <span class="section-label">Our Approach</span>
-      <h2>Three pillars of sustainable agriculture</h2>
+      <h2>Organic, safe, and effective</h2>
     </div>
     <div class="pillars-grid">
       <div class="pillar-card reveal">
-        <div class="pillar-num">01</div>
-        <h3>Regenerative Soil Practices</h3>
-        <p>We prioritize soil health through cover cropping, crop rotation, and composting. Healthy soil means healthier crops, stronger yields, and a reduced carbon footprint across all our farmland.</p>
+        <div class="pillar-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#3D8B5E" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M7 20h10"/><path d="M10 20c5.5-2.5.8-6.4 3-10"/><path d="M9.5 9.4c1.1.8 1.8 2.2 2.3 3.7-2 .4-3.5.4-4.8-.3-1.2-.6-2.3-1.9-3-4.2 2.8-.5 4.4 0 5.5.8z"/></svg></div>
+        <h3>Organic Ingredients</h3>
+        <p>Created using responsibly sourced organic ingredients, making them a safer alternative to traditional chemical-based solutions.</p>
       </div>
       <div class="pillar-card reveal">
-        <div class="pillar-num">02</div>
-        <h3>Water-Smart Irrigation</h3>
-        <p>Our farms use precision drip irrigation and rainwater harvesting systems to minimize water use. Every drop is optimized to support crop growth while preserving local water resources.</p>
+        <div class="pillar-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#3D8B5E" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg></div>
+        <h3>Safe for People</h3>
+        <p>Gentle on surfaces and safe for everyday use — removing dirt, grease, and bacteria without compromising health.</p>
       </div>
       <div class="pillar-card reveal">
-        <div class="pillar-num">03</div>
-        <h3>Integrated Pest Management</h3>
-        <p>Instead of chemical pesticides, we rely on beneficial insects, companion planting, and biological controls to manage pests — keeping our crops clean and our ecosystems intact.</p>
+        <div class="pillar-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#3D8B5E" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
+        <h3>Reliable Performance</h3>
+        <p>Delivering powerful results you can count on — formulated for consistency across every batch and application.</p>
+      </div>
+      <div class="pillar-card reveal">
+        <div class="pillar-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#3D8B5E" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div>
+        <h3>Eco-Responsible</h3>
+        <p>Biodegradable formulas that protect the environment without sacrificing the cleaning power you need.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- PHOTO FEATURE -->
-<section class="photo-feature">
-  <div class="photo-feature-inner reverse reveal">
-    <div class="photo-feature-img">
-      <img src="agri-tractor.jpg" alt="John Deere tractor harvesting grain on farm">
-    </div>
-    <div class="photo-feature-text">
-      <h2>From Harvest to Market</h2>
-      <p>Our vertically integrated model means we control every step — from planting and cultivation to harvest, processing, and distribution. This ensures full traceability and uncompromising quality at every stage.</p>
-      <p>With modern equipment and a dedicated team, we operate efficiently at scale while maintaining the hands-on care that organic farming demands.</p>
+<!-- DESIGNED FOR EVERY ENVIRONMENT -->
+<section class="environments">
+  <div class="environments-inner">
+    <h2 class="reveal">Designed for Every Environment</h2>
+    <p class="reveal">From homes to commercial facilities, our cleaning solutions are built to perform across a wide range of applications.</p>
+    <div class="env-grid">
+      <div class="env-card reveal">
+        <div class="env-card-icon">🍳</div>
+        <h3>Kitchens</h3>
+        <p>Food preparation areas</p>
+      </div>
+      <div class="env-card reveal">
+        <div class="env-card-icon">🚿</div>
+        <h3>Bathrooms</h3>
+        <p>High-touch surfaces</p>
+      </div>
+      <div class="env-card reveal">
+        <div class="env-card-icon">🏢</div>
+        <h3>Offices</h3>
+        <p>Commercial spaces</p>
+      </div>
+      <div class="env-card reveal">
+        <div class="env-card-icon">🏭</div>
+        <h3>Industrial</h3>
+        <p>Large-scale facilities</p>
+      </div>
     </div>
   </div>
 </section>
@@ -263,9 +308,9 @@
 <!-- CTA -->
 <section class="cta-strip">
   <div class="cta-inner reveal">
-    <h2>Interested in <em>partnering</em> with us?</h2>
-    <p>Whether you're a distributor, retailer, or fellow grower, we'd love to explore how we can work together to bring organic products to more people.</p>
-    <a href="#" class="cta-btn">Get in Touch &rarr;</a>
+    <h2>Ready for <em>cleaner</em> spaces?</h2>
+    <p>We are committed to creating safe, effective, and environmentally responsible cleaning solutions. By combining organic ingredients, advanced laboratory development, and a focus on quality, we deliver products that support cleaner spaces and healthier living.</p>
+    <a href="#" class="cta-btn">Request a Quote &rarr;</a>
   </div>
 </section>
 
@@ -275,17 +320,11 @@
     <div class="footer-top">
       <a href="index.html" class="footer-logo">Admac<span>can</span></a>
       <ul class="footer-links">
-        <li><a href="#">Careers</a></li>
-        <li><a href="#">Investors</a></li>
-        <li><a href="#">Media Center</a></li>
-        <li><a href="#">Supplier Center</a></li>
-        <li><a href="#">Privacy Policy</a></li>
-        <li><a href="#">Terms of Use</a></li>
+        <li><a href="#">Careers</a></li><li><a href="#">Investors</a></li><li><a href="#">Media Center</a></li>
+        <li><a href="#">Supplier Center</a></li><li><a href="#">Privacy Policy</a></li><li><a href="#">Terms of Use</a></li>
       </ul>
     </div>
-    <div class="footer-bottom">
-      <span class="footer-copy">&copy; 2026 Admaccan. All rights reserved.</span>
-    </div>
+    <div class="footer-bottom"><span class="footer-copy">&copy; 2026 Admaccan. All rights reserved.</span></div>
   </div>
 </footer>
 
@@ -294,9 +333,7 @@
   window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 40); });
   const reveals = document.querySelectorAll('.reveal');
   const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry, i) => {
-      if (entry.isIntersecting) { setTimeout(() => entry.target.classList.add('visible'), i * 120); observer.unobserve(entry.target); }
-    });
+    entries.forEach((entry, i) => { if (entry.isIntersecting) { setTimeout(() => entry.target.classList.add('visible'), i * 120); observer.unobserve(entry.target); } });
   }, { threshold: 0.15 });
   reveals.forEach(el => observer.observe(el));
 </script>
